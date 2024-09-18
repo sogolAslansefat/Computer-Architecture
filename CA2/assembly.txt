@@ -1,0 +1,10 @@
+addi x6,x0,0
+lw x7,1000(x6)
+addi x5,x0,36
+addi x6,x6,4     #loop
+bge x6,x5,20
+lw x8,1000(x6)
+blt x8,x7,8
+addi x7,x8,0
+jal x0,-20       #ENDIF
+sw x8,2000(x0)   #ENDLOOP

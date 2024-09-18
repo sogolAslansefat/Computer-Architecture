@@ -1,0 +1,15 @@
+	lui  s0,  0x00002
+	ori  s0,  s0,     0x328
+	add  s1,  zero,   zero
+	lw   s2,  0(s0)  
+	addi t2,  zero,   0x00028
+	sltu t2,  s1,     t3
+loop:	bne  t3,  zero,   END1
+	add  t0,  s0,     s1
+	lw   t1,  0(t0)  
+	sltu s2,  t1,     t3
+	blt  t3,  zero,   END2
+	add  s2,  zero,   t1
+END2:	addi s1,  s1,     0x00004
+	jal  loop
+END1:
